@@ -52,6 +52,29 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
+
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            font-size: 17px;
+            opacity: 0;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
     </style>
     <style>
         *,
@@ -1222,7 +1245,7 @@
                                 d="M40.8,-68.7C51.9,-61.5,59.5,-48.4,65.6,-35C71.7,-21.6,76.3,-7.9,75.9,5.7C75.5,19.3,70.1,32.8,61.4,43.9C52.7,55,40.8,63.6,27.4,69.9C14.1,76.2,-0.7,80.1,-15.3,77.8C-29.9,75.5,-44.3,67,-55.3,55.3C-66.3,43.7,-73.9,28.9,-76.8,13.2C-79.7,-2.5,-77.9,-19.1,-70.6,-32.6C-63.3,-46.1,-50.5,-56.5,-37,-64.2C-23.5,-71.9,-9.3,-76.9,3.9,-83.1C17.1,-89.3,29.7,-75.9,40.8,-68.7Z"
                                 transform="translate(100 100)"></path>
                         </svg>
-                        <div class="absolute inset-0 flex items-center justify-center">     
+                        <div class="absolute inset-0 flex items-center justify-center">
                             <img src="myphoto.jpg" alt="Your Photo" class="w-40 h-40 rounded-full object-cover" />
                         </div>
                     </div>
@@ -1306,7 +1329,9 @@
                     <div class="mt-8">
                         <h3 class="text-xl font-semibold mb-4">Blog &amp; Thoughts</h3>
                         <div class="space-y-3">
-                            <a href="https://nomadnemo.wordpress.com/2025/07/19/the-future-of-healthcare/" target="_blank" class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                            <a href="https://nomadnemo.wordpress.com/2025/07/19/the-future-of-healthcare/"
+                                target="_blank"
+                                class="block p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
                                 <h4 class="font-medium"> The Future of Healthcare </h4>
                             </a>
                         </div>
@@ -1374,13 +1399,16 @@
                                 </path>
                             </svg>
                         </div>
-                        <a href ="https://www.figma.com/proto/RIvRRsnjzmdBIPVtZywEi4/LMS?node-id=1-268&p=f&t=ZJsne4KPQv7wOAsN-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A268&show-proto-sidebar=1" target ="_blank" >
-                        <h3 class="text-lg font-semibold mb-2"> AI powered LMS </h3>                  
-                        <p class="text-gray-600 mb-4">A detailed flow of the LMS system designed for EHR users to discover new content, take courses, and learn with the assistance of AI.</p> </a>
+                        <a href="https://www.figma.com/proto/RIvRRsnjzmdBIPVtZywEi4/LMS?node-id=1-268&p=f&t=ZJsne4KPQv7wOAsN-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1%3A268&show-proto-sidebar=1"
+                            target="_blank">
+                            <h3 class="text-lg font-semibold mb-2"> AI powered LMS </h3>
+                            <p class="text-gray-600 mb-4">A detailed flow of the LMS system designed for EHR users to
+                                discover new content, take courses, and learn with the assistance of AI.</p>
+                        </a>
                         <div class="flex items-center text-sm text-gray-500">
                             <i class="fas fa-project-diagram mr-2"></i>
                             <span>Figma UI Wireframes</span>
-                        </a>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1395,13 +1423,15 @@
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <a href = "https://pmkeshav.github.io/rawhtmls/" target="_blank">
-                        <h3 class="text-lg font-semibold mb-2">Flow charts Roadmaps and PRDs</h3>
-                        <p class="text-gray-600 mb-4">Flow chats shows critical thinking and an understanding of problem break down.</p>
-                        <div class="flex items-center text-sm text-gray-500">
-                            <i class="fas fa-route mr-2"></i>
-                            <span> Execution ability, attention to detail, and communication with cross-functional teams</span>
-                        </div>
+                        <a href="https://pmkeshav.github.io/rawhtmls/" target="_blank">
+                            <h3 class="text-lg font-semibold mb-2">Flow charts Roadmaps and PRDs</h3>
+                            <p class="text-gray-600 mb-4">Flow chats shows critical thinking and an understanding of
+                                problem break down.</p>
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i class="fas fa-route mr-2"></i>
+                                <span> Execution ability, attention to detail, and communication with cross-functional
+                                    teams</span>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1439,7 +1469,8 @@
                             </svg>
                         </div>
                         <h3 class="text-lg font-semibold mb-2">Metrics & Impact</h3>
-                        <p class="text-gray-600 mb-4">User growth, Retention, Revenue impact, NPS or CSAT improvement.</p>
+                        <p class="text-gray-600 mb-4">User growth, Retention, Revenue impact, NPS or CSAT improvement.
+                        </p>
                         <div class="flex items-center text-sm text-gray-500">
                             <i class="fas fa-clipboard-list mr-2"></i>
                             <span>Outcomes dachieved backed by data</span>
@@ -1783,38 +1814,37 @@
                                     class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary mr-3">
                                     <i class="fas fa-envelope"></i>
                                 </div>
-                                <span class="text-gray-600">alex.morgan@example.com</span>
+                                <span class="text-gray-600">jesuiskeshav@gmail.com</span>
                             </div>
                             <div class="flex items-center">
                                 <div
                                     class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary mr-3">
                                     <i class="fas fa-phone"></i>
                                 </div>
-                                <span class="text-gray-600">(555) 123-4567</span>
+                                <span class="text-gray-600">9716374887</span>
                             </div>
                             <div class="flex items-center">
                                 <div
                                     class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary mr-3">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <span class="text-gray-600">San Francisco, CA</span>
+                                <span class="text-gray-600">Delhi, India</span>
                             </div>
                         </div>
                         <div class="mt-6">
                             <h4 class="font-medium mb-3">Connect with me</h4>
                             <div class="flex space-x-4">
-                                <a href="#"
-                                    class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary hover:bg-indigo-200 transition-colors">
+                                <a href="https://www.linkedin.com/in/kes-kumar/"
+                                    class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary hover:bg-indigo-200 transition-colors"
+                                    target="_blank">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary hover:bg-indigo-200 transition-colors">
+                                <a href="https://x.com/jesuiskeshav"
+                                    class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary hover:bg-indigo-200 transition-colors"
+                                    target="_blank">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#"
-                                    class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary hover:bg-indigo-200 transition-colors">
-                                    <i class="fab fa-medium-m"></i>
-                                </a>
+
                                 <a href="#"
                                     class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-primary hover:bg-indigo-200 transition-colors">
                                     <i class="fab fa-github"></i>
@@ -1824,7 +1854,7 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-4">Send a Message</h3>
-                        <form class="space-y-4">
+                        <form id="contactForm" action="https://formsubmit.co/jesuiskeshav@gmail.com" method="POST">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
                                 <input type="text" id="name"
@@ -1845,6 +1875,7 @@
                                 class="w-full px-6 py-3 bg-primary text-white rounded-lg hover:bg-indigo-600 transition-colors">Send
                                 Message</button>
                         </form>
+                        <div id="toast">Message sent. Thank you!</div>
                     </div>
                 </div>
             </div>
@@ -1929,6 +1960,37 @@
                 e.preventDefault();
                 alert('This is a demo form. In a real application, this would send your message.');
             });
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const form = e.target;
+
+            fetch(form.action, {
+                method: "POST",
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    showToast();
+                    form.reset();
+                } else {
+                    alert("There was an error sending the message.");
+                }
+            }).catch(error => {
+                alert("Failed to send message.");
+            });
+        });
+
+        function showToast() {
+            const toast = document.getElementById("toast");
+            toast.classList.add("show");
+            setTimeout(() => {
+                toast.classList.remove("show");
+            }, 3000); // Show for 3 seconds
         }
     </script>
     <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'96152178c7bd918d',t:'MTc1Mjg3NDc1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
