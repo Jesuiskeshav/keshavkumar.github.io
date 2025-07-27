@@ -25,6 +25,7 @@
                 }
             }
         }
+
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -1200,6 +1201,7 @@
                 <a href="https://nomadnemo.wordpress.com" target="_blank"
                     class="text-gray-600 hover:text-primary transition-colors">My Blog</a>
             </div>
+
             <button id="mobile-menu-button" class="md:hidden text-gray-600 focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
             </button>
@@ -1224,9 +1226,13 @@
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0">
                     <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Product Manager</h1>
-                    <p class="text-xl md:text-2xl text-gray-600 mb-6">Turning ideas into impactful products</p>
-                    <p class="text-gray-600 mb-8 max-w-lg">With 7.5 years of experience crafting user-centered solutions
-                        across Healthcare, CRM, and Learning Management Systems.</p>
+                    <p class="text-xl md:text-2xl text-gray-600 mb-6">Turning Ideas into Products</p>
+                    <p class="text-gray-600 mb-8 max-w-lg">
+
+                        Welcome! I'm a Product Manager with <span id="pm-experience-years"></span> years of experience
+                        (<span id="experience-years"></span> total), specializing in U.S. Healthcare, CRM, and LMS. Also
+                        a tech enthusiast, sci-fi fan, and guitarist. Let’s connect and collaborate!
+                    </p>
                     <div class="flex space-x-4">
                         <a href="#about"
                             class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-indigo-600 transition-colors">View
@@ -1264,9 +1270,13 @@
                 <div class="md:w-1/2">
                     <h3 class="text-xl font-semibold mb-4">Professional Summary</h3>
                     <p class="text-gray-600 mb-6">
-                        I'm a strategic Product Manager with 7.5 years of experience building innovative digital
-                        products that solve real user problems. My approach combines deep user empathy with data-driven
-                        decision making to deliver products that users love and drive business growth.
+                        Product Manager with total <span id="experience-years"></span> years of experience building and
+                        scaling B2B & B2C SaaS products. Proven expertise in EHR systems, HIPAA compliance, AI-driven
+                        automation, CRM and LMS platforms. Skilled in defining product roadmaps, driving user adoption,
+                        and collaborating with cross-functional teams to deliver high-impact solutions. Adept at
+                        reducing support overhead, improving user engagement, and optimizing product performance through
+                        data-driven insights, A/B testing, and user research, ensuring business growth and customer
+                        retention.
                     </p>
                     <div class="mb-8">
                         <h4 class="font-medium mb-2">Domain Expertise:</h4>
@@ -1434,7 +1444,7 @@
                                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <a href="https://pmkeshav.github.io/rawhtmls/" target="_blank">
+                    <a href="#user-flow" target="_blank">
                         <h3 class="text-lg font-semibold mb-2">Flow charts, Roadmaps and PRDs</h3>
                         <p class="text-gray-600 mb-4">Flow chats shows critical thinking and an understanding of
                             problem break down.</p>
@@ -1495,7 +1505,7 @@
     <!-- Market & User Research Section -->
     <section id="research" class="py-16 bg-white section-fade visible">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-12 text-center">User Persona &amp; Market Research</h2>
+            <h2 class="text-3xl font-bold mb-12 text-center">Market &amp; User Research</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                 <!-- User Personas -->
                 <div class="bg-secondary rounded-xl p-6">
@@ -1688,18 +1698,19 @@
                             <div class="flex items-center justify-between mb-4">
                                 <span
                                     class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-medium">Successful</span>
-                                <span class="text-sm text-gray-500">Q3 2022</span>
+                                <span class="text-sm text-gray-500">Q2 2025</span>
                             </div>
-                            <h4 class="font-medium mb-2">Feature Adoption Campaign</h4>
-                            <p class="text-gray-600 text-sm mb-4">Targeted email and in-app messaging to increase
-                                adoption of underutilized features.</p>
+                            <h4 class="font-medium mb-2">Improving Plugin Accessiblity</h4>
+                            <p class="text-gray-600 text-sm mb-4">Reducing Support Tickets by Enhancing Plugin
+                                Accessibility in the EHR Customer Portal.</p>
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center">
-                                    <i class="fas fa-arrow-up text-green-500 mr-1"></i>
-                                    <span class="text-sm font-medium">28% Increase</span>
+                                    <i class="fas fa-arrow-down text-red-500 mr-1"></i>
+                                    <span class="text-sm font-medium">70% reduction in resolution time</span>
                                 </div>
-                                <button
-                                    class="text-primary hover:text-indigo-700 transition-colors text-sm">Details</button>
+                                <button class="text-primary hover:text-indigo-700 transition-colors text-sm"><a
+                                        href="https://docs.google.com/document/d/1dhoFhdIzavRTdDOej_fVXvD6QaEln6rm/edit?usp=sharing&ouid=111921047130047387445&rtpof=true&sd=true"
+                                        target="_blank">Details</a> </button>
                             </div>
                         </div>
                     </div>
@@ -1915,6 +1926,38 @@
     </footer>
 
     <script>
+
+        // Set your career start date here (YYYY, MM - 0-based index)
+
+
+        const startDate = new Date(2017, 7); // August 2017
+        const today = new Date();
+
+        let totalMonths =
+            (today.getFullYear() - startDate.getFullYear()) * 12 +
+            (today.getMonth() - startDate.getMonth());
+
+        let experience = (totalMonths / 12).toFixed(1); // rounded to 1 decimal place
+
+        document.getElementById('experience-years').innerText = experience + " years";
+
+        // Set your PM career start date here (YYYY, MM - 0-based index)
+
+        const pmstartDate = new Date(2021, 1); // August 2017
+        const pmtoday = new Date();
+
+        let pmtotalMonths =
+            (today.getFullYear() - pmstartDate.getFullYear()) * 12 +
+            (today.getMonth() - pmstartDate.getMonth());
+
+        let pmexperience = (pmtotalMonths / 12).toFixed(1); // rounded to 1 decimal place
+
+        document.getElementById('pm-experience-years').innerText = pmexperience + " years";
+
+
+
+
+
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
